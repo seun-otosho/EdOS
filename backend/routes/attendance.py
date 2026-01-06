@@ -353,7 +353,7 @@ async def get_leave_requests(
             {"parent_id": user_data["user_id"]},
             {"student_id": 1}
         ).to_list(20)
-        student_ids = [l["student_id"] for l in links]
+        student_ids = [link["student_id"] for link in links]
         query["student_id"] = {"$in": student_ids}
     
     requests = await db.leave_requests.find(query, {"_id": 0}).sort("created_at", -1).to_list(100)
