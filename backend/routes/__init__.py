@@ -6,3 +6,4 @@ from .academic import academic_router
 from .attendance import attendance_router
 from .grades import grades_router
 from .dashboard import dashboard_router
+from .communication import communication_router
