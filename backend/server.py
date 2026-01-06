@@ -55,6 +55,7 @@ api_router.include_router(academic_router)
 api_router.include_router(attendance_router)
 api_router.include_router(grades_router)
 api_router.include_router(dashboard_router)
+api_router.include_router(communication_router)
 
 
 # Health check endpoint
