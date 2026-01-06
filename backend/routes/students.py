@@ -75,9 +75,12 @@ async def create_student(
         UserType.PRINCIPAL.value
     ], user_data)
     
+    # Filter out None values and handle medical_info
+    student_data = {k: v for k, v in data.model_dump().items() if v is not None}
+    
     student = Student(
         school_id=user_data["school_id"],
-        **data.model_dump()
+        **student_data
     )
     
     await db.students.insert_one(serialize_datetime(student.model_dump()))
