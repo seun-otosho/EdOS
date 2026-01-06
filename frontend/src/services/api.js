@@ -183,4 +183,26 @@ export const dashboardAPI = {
   getStudentDashboard: () => api.get('/dashboard/student'),
 };
 
+// Communication APIs
+export const communicationAPI = {
+  // Announcements
+  createAnnouncement: (data) => api.post('/communication/announcements', data),
+  getAnnouncements: (params) => api.get('/communication/announcements', { params }),
+  getAnnouncement: (id) => api.get(`/communication/announcements/${id}`),
+  updateAnnouncement: (id, data) => api.put(`/communication/announcements/${id}`, data),
+  deleteAnnouncement: (id) => api.delete(`/communication/announcements/${id}`),
+  
+  // Messages
+  sendMessage: (data) => api.post('/communication/messages', data),
+  getMessages: (params) => api.get('/communication/messages', { params }),
+  getConversations: () => api.get('/communication/conversations'),
+  markMessageRead: (id) => api.put(`/communication/messages/${id}/read`),
+  markConversationRead: (userId) => api.put(`/communication/conversations/${userId}/read-all`),
+  
+  // Events
+  createEvent: (data) => api.post('/communication/events', data),
+  getEvents: (params) => api.get('/communication/events', { params }),
+  deleteEvent: (id) => api.delete(`/communication/events/${id}`),
+};
+
 export default api;
