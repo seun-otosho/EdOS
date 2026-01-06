@@ -115,7 +115,7 @@ async def get_teacher_dashboard(user_data: dict = Depends(get_current_user_data)
         )
     
     teacher_id = user_data["user_id"]
-    school_id = user_data["school_id"]
+    # school_id is available from user_data if needed
     
     # Get teacher's class assignments
     assignments = await db.class_subjects.find(
