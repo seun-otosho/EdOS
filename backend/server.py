@@ -33,6 +33,7 @@ from routes.academic import academic_router, set_db as set_academic_db
 from routes.attendance import attendance_router, set_db as set_attendance_db
 from routes.grades import grades_router, set_db as set_grades_db
 from routes.dashboard import dashboard_router, set_db as set_dashboard_db
+from routes.communication import communication_router, set_db as set_communication_db
 
 # Set database for all routes
 set_auth_db(db)
@@ -43,6 +44,7 @@ set_academic_db(db)
 set_attendance_db(db)
 set_grades_db(db)
 set_dashboard_db(db)
+set_communication_db(db)
 
 # Include all routers
 api_router.include_router(auth_router)
